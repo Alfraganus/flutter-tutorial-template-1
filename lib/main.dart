@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/screens/header.dart';
+import 'package:flutter_template/screens/home/blackFriday.dart';
 import 'package:flutter_template/screens/home/discover.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.all(15),
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner:false,
@@ -19,9 +20,12 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home:Scaffold (
+          backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
             foregroundColor: Colors.black,
+            elevation: 0.0,
+            bottomOpacity: 0.0,
             leading: IconButton(
               icon: const Icon(Icons.menu),
               alignment:Alignment.centerLeft,
@@ -42,10 +46,11 @@ class MyApp extends StatelessWidget {
             ],
 
           ),
-          body: Stack(
+          body: Column(
             children: [
-              Discover()
-            ],
+              Discover(),
+              BlackFriday(),
+            ].map((e) => Padding(padding: EdgeInsets.only(top: 20), child: e)).toList(),
           ),
         )
       ),

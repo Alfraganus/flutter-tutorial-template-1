@@ -6,66 +6,60 @@ class Discover extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
        children: [
-         Textcha(),
-         SearchPage()
+         Headlines(),
+         SearchField()
        ],
       ),
     );
   }
 }
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.height * 0.30,
-      height: 200,
-      color: Colors.black87,
-      child: TextField(
-        decoration: InputDecoration(
-            fillColor: Colors.black87,
-          focusColor: Colors.green,
-          contentPadding: EdgeInsets.all(16),
-            prefixIcon: Icon(Icons.search),
-            suffixIcon: IconButton(
-              icon: Icon(Icons.clear),
-              onPressed: () {
-                /* Clear the search field */
-              },
-            ),
-            hintText: 'Search...',
-            border: InputBorder.none),
-      ),
-    );
-  }
-}
-
-class Textcha extends StatelessWidget {
-  const Textcha({Key? key}) : super(key: key);
-
+class Headlines extends StatelessWidget {
+  const Headlines({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.height * 0.40,
-      height: 300,
+      width: MediaQuery.of(context).size.height * 0.25,
       child:  RichText(
           text: TextSpan (
               children: [
                 TextSpan(text: 'Discover \n',style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 60
+                    fontSize: 45
                 )),
                 TextSpan(text: 'New Collections',style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20
                 )),
-
               ]
           )
       ),
     );
   }
 }
+
+
+class SearchField extends StatelessWidget {
+  const SearchField({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.height * 0.18,
+      // height: 100,
+      // color: Colors.black87,
+      child: TextField(
+        decoration: InputDecoration(
+            fillColor: Colors.black87,
+          focusColor: Colors.green,
+          contentPadding: EdgeInsets.all(9),
+            suffixIcon:  Icon(Icons.search,size: 70,),
+            hintText: 'Search...',
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15.0))),
+      ),
+    );
+  }
+}
+
