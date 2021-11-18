@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_template/screens/header.dart';
 import 'package:flutter_template/screens/home/blackFriday.dart';
 import 'package:flutter_template/screens/home/discover.dart';
+import 'package:flutter_template/screens/home/menus.dart';
 
 void main() {
   runApp(MyApp());
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
             children: [
               Discover(),
               BlackFriday(),
+              Menu(),
             ].map((e) => Padding(padding: EdgeInsets.only(top: 20), child: e)).toList(),
           ),
         )
