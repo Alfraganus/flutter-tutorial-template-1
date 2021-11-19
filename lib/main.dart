@@ -3,6 +3,7 @@ import 'package:flutter_template/screens/header.dart';
 import 'package:flutter_template/screens/home/blackFriday.dart';
 import 'package:flutter_template/screens/home/discover.dart';
 import 'package:flutter_template/screens/home/menus.dart';
+import 'package:flutter_template/screens/home/products.dart';
 
 void main() {
   runApp(MyApp());
@@ -52,21 +53,11 @@ class MyApp extends StatelessWidget {
               Discover(),
               BlackFriday(),
               Menu(),
+              Products(),
             ].map((e) => Padding(padding: EdgeInsets.only(top: 20), child: e)).toList(),
           ),
         )
       ),
-    );
-  }
-}
-
-class Header extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-
-      ],
     );
   }
 }
