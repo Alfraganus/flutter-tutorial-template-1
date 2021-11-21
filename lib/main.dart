@@ -54,6 +54,8 @@ class MyApp extends StatelessWidget {
               BlackFriday(),
               Menu(),
               Products(),
+              Products(),
+
             ].map((e) => Padding(padding: EdgeInsets.only(top: 20), child: e)).toList(),
           ),
         )
