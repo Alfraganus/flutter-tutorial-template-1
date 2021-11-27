@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'banner.dart';
 class DetailProduct extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -44,7 +44,7 @@ class DetailProduct extends StatelessWidget {
             ),
             body: Column(
               children: [
-
+                MainBanner(),
               ].map((e) => Padding(padding: EdgeInsets.only(top: 20), child: e)).toList(),
             ),
           )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/screens/detail_product/banner.dart';
 import 'package:flutter_template/screens/header.dart';
 import 'package:flutter_template/screens/home/blackFriday.dart';
 import 'package:flutter_template/screens/home/discover.dart';
@@ -50,11 +51,12 @@ class MyApp extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Discover(),
+              MainBanner(),
+            /*  Discover(),
               BlackFriday(),
               Menu(),
               Products(),
-              Products(),
+              Products(),*/
 
             ].map((e) => Padding(padding: EdgeInsets.only(top: 20), child: e)).toList(),
           ),
